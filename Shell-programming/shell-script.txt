@@ -1,0 +1,100 @@
+-> cat /etc/shells(kon kon shell support kore)
+6047267918
+308
+amader focus bash shell.
+*bash shell er extention .sh
+
+-> which bash(bash shell er location)
+ei location ta note kora lagbe cause pore lagbe.
+
+-> cd desktop
+-> mkdir lab4
+-> touch lab4.sh
+-> ls -al(ki ki korar permission ache)
+ read-4,write-2,execute-1
+-> chmod 744 lab4.sh(ami shob,onno der read er permission dilam)
+**bash code
+#! /usr/bin/bash(location of bash)
+echo "hello world"
+**bash code end
+-> ./lab4.sh(bash exe korar jonno)
+** bash code
+echo tell your name
+read name
+read -p 'please enter your name :' name(pasha pashi cursor)
+read -sp 'password' pass(hide kora input)
+echo Hello $name
+echo "Your name is : $name"
+**
+./lab4.sh
+**shell
+read -p 'Name:' name
+read -p 'age:' age
+read -p 'semester:' sem
+
+echo 'I am $name.I am $age year old.My running semeter number is $sem.
+**bash(array)
+echo 'please enter the numbers'
+read -a name
+name = (10 20 30 40 50)
+name[2]=19(majhe space dile = er duipashe error)
+echo "${!name[@]}"--shows index
+echo "${name[@]}"--shows values
+echo "${#name[@]}"--shows size
+word = "my name is kazi"(mult word newer jonno double quote lage"
+***
+**bash
+echo "please enter the 1st number:"
+read b
+c=$((a+b))
+echo c
+----float
+a=20.5 b = 1.5
+echo "scale=2;$a/$b"|bc
+--------------------------------------
+c program -> shell
+keyboard input + 3 arith ops
+problem statement : 
+Take input the number days a student was absent out of 70 working days.Calculate the attendance percentage and the number that the student obatained out of 15 marks associated with student's class attendance.
+
+#! /usr/bin/bash
+
+
+read -p "Please enter the number of days the Student was absent : " absent
+
+total_working_days=70
+echo "Total Working day is : $total_working_days"
+
+present=$((total_working_days-absent))
+
+echo  "Attendance Percentage of the student is :"
+echo "scale=2;$present*100/$total_working_days" | bc
+
+echo "Class Participation Marks Out of 15 :"
+echo "scale=2;$present*15/70" | bc
+
+cd Desktop/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,71 @@
+if[$count eq 10]
+then
+echo count is equla to 10
+fi
+-eq = is equal to
+-ne = not equal to
+-gt = is greater than
+-ge = is greater than or equal to
+-lt = less than
+-le = less than or equal
+-a = and
+-o = or
+
+if[$count eq 10]
+then
+echo count is equla to 10
+else
+command
+fi
+
+-------------------------------------
+while loop:
+
+a = 0
+while[$a -lt 10]
+do 
+  echo $a
+  a = $(expr $a + 1)
+done
+until loop is also the same
+
+for loop:
+for(( $i = 5 ; $i -gt $p ; $i = $i + 1))
+do 
+
+
+done
+
+
+
+os = ('10' '20' '30')
+
+echo "${os[1]}"
+arr_len = ${#os[@]}
+index_print = ${!os[@]}
+unset os[2]
+
+Take an array of number and Check divisibility for both 2 and 4.If a number is divisible by 2 but not by 4 then the number is only divisible by 2 else the number is both divisible by 2 and 4 or 8.Output will be shown according to the numbers.
+
+#! /usr/bin/bash
+os=(10 21 24 40 50)
+arr_len=${#os[@]}
+for(( i=0 ; i<$arr_len ; i++))
+do
+num=${os[$i]}
+if [ $(( num % 4 )) -eq 0 ]
+then
+	num2=$((num/2))
+	if [ $(( num2 % 4 )) -eq 0 ]
+        then
+            echo "div by 2,4,8"
+        else
+            echo "div by 2,4"
+        fi
+elif [ $(( num % 2 )) -eq 0 ]
+then
+echo "olny div by 2"
+else
+echo "not div by 2,4 or 8"
+fi
+done

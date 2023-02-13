@@ -1,0 +1,22 @@
+#! /usr/bin/bash 
+os=(10 21 24 40 50) 
+arr_len=${#os[@]} 
+for(( i=0 ; i<$arr_len ; i++)) 
+do 
+num=${os[$i]} 
+if [ $(( num % 4 )) -eq 0 ] 
+then 
+ num2=$((num/2)) 
+ if [ $(( num2 % 4 )) -eq 0 ] 
+ then 
+ echo "div by 2,4,8" 
+ else 
+ echo "div by 2,4" 
+ fi 
+elif [ $(( num % 2 )) -eq 0 ] 
+then 
+echo "olny div by 2" 
+else 
+echo "not div by 2,4 or 8" 
+fi 
+done

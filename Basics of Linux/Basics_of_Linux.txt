@@ -1,0 +1,227 @@
+FAT - File allocation table
+FAT-32 , FAT , FAT-64
+NTFS - New technology file system
+Linux -> File management System - Extended-4
+
+
+Basic Terminal Commands :
+
+>>whoami
+shows user_name
+>>uname
+Linux
+>> uname -a
+shows all information
+>> pwd(print working directory)
+>> cal(calander)
+>> cal 2020
+>> ls 
+>> ls -a
+(Hidden files start with a ".")
+>> ls -l
+
+* if i want to go to a derectory
+>> cd Desktop/
+* if we want to go back
+>> cd ..
+>> cd bin/
+>> cd ~ (takes me to home directory)
+>> cd (also takes me to home directory)
+* if we want to enter root directory
+>> sudo cd /root
+pass:kazi1234
+** for creating files
+>> touch a.txt
+** linux is case sensitive
+>> ls -l (file size dekhar jonno)
+>> cat a.txt(file er bhitore ki lekha ache dekhabe)
+>> cat a.txt a(2ta file e ki ache concat kore dekhabe)
+
+** how to write in a file
+>> cat > a.txt 
+This is Kazi.
+Kazi is a very smart boy.
+Kazi wants to be a billionaire
+ctrl+c
+>> ls -l (see the size of the file)
+>> cat a.txt
+>> echo food is good
+out -> food is good
+>> echo kazi is great human > a.txt
+** how to append a line in a file
+>> echo Mist >> a.txt
+---------------
+>>wc a.txt(word count)
+no_of_lines no_of_words no_of_chars
+
+--------------------------------
+** how to create a directory
+>>mkdir ucl_2012
+>>ls(directory er shob file and folder dekhabe)
+** how to remove a directory
+>> rmdir A B C(means A,B,C directory ke delete korchi)
+** how to remove a file
+>> rm a.txt
+>> find a*(a diye jei file gular name tara ashbe)
+>> rm a*(a diye jader name shuru shobai removed hobe)
+** how to copy a file from 1 dir to another
+>> cp a.txt ./ucl_2012
+(then a copy will be created in ucl_2012 dir)
+>> ls ./ucl_2012
+>> cp a.txt ./ucl_2012/b.txt(if i am not in ucl_2012 dir)
+if i am in ucl_2012 dir
+>> cp a.txt ucl_2012/b.txt
+(a.txt b.txt name e ucl_2012 dir e copy holo)
+** how to move a file
+>>mv a.txt Desktop/
+-------------------------------------------
+>> cd ucl_2012
+>> ls -l
+>> cdmod 777 b.txt(shobaike read,write,exe er permission dicchi)
+>> cdmod 664 e thake basically
+-- shell programming e kaje dibe
+--------------------------------------------
+*** find
+>> mkdir D1 D2 D3
+>> find D?(Shows D er por ek char ase emon)
+>> find D*(Dile shob ashbe jader 1st  D)
+--------------------------------------------
+**grep
+>> cd ucl_2012
+>> cat >> a.txt
+CSE-18
+CSE-19
+201814022
+>> grep CSE a.txt(jei line gula te CSE likha)
+CSE-18
+CSE-19
+---------------------------------------------
+**head and tail
+>>cat a.txt
+head command shows the 1st ten lines of a file.
+>> head a.txt
+>> tail b.txt(gives the last 10 lines)
+first er 5 line jodi dekhte chai
+>> head -n 5 a.txt(similar for tail)
+--------------------------------------------
+less and more
+>> less b.txt(window te jototuku jayga ase niye dekhabe) "q" diye ber hoye ashte hobe
+--------------------------------------------
+**pipeline
+ekjon er output ke arekjon er input hishebe diye dey.
+>> cat a.txt
+>> cat a.txt | grep CSE(using pipeline)
+>> grep CSE a.txt(normally)
+>> top(jei process gula cholche oigula dekhay)
+>>ifconfig c.txt(ip config c.txt e likha hobe)
+>> top > d.txt
+>> cat d.txt
+ami chacchi er moddhe theke kichu jinish grep korte kibhabe korbo
+>> top > d.txt | grep S(madam pare na)
+
+---------------------------------------------
+-- suppose ekta file e 30 line ache
+-- ami line 10-20 dekhte chai
+using head tail and pipeline
+
+>> head -n 20 b.txt | tail -n 10
+majher 10 line dekhte parbo
+
+--------------------------------------------
+bc -> basic calculator
+>> bc
+>>4+5
+9
+>>56-9
+47
+>>5*3
+15
+>>4/2 
+2
+by default scale 0 thake
+scale = 2 korle point er por 2 block dekhabe
+>>5/8
+.68
+-------------------------------------------
+dec -> bin
+ibase = 10
+obase = 2
+5
+101
+4
+100
+quit
+-------------------------------------------
+sin cos
+bc -l
+s(1)[sin(1)]
+quit
+-------------------------------------------
+>>echo 5+8 | bc
+13
+>> x=$(echo 5+8 | bc) or x=`echo 5+8 | bc`
+>> echo $x
+>>history
+man cp
+man ls
+man cat
+man echo
+by chance kono kichu bhule gele
+
+-------------------------------------------------------------------------------------------
+problems:
+1.Create a file "PL 2020" which will contain the Premier league table of 2020 which contains 20 football teams and Their Points this season.The top 4 teams of the table will play UEFA Champions League next season.So another file named "UCL Teams" Will be created and The top 4 teams will be Selected using head and Printed in the "UCL teams" file using Pipeline.From that file We will be able to see the Teams who are selected for UCL next season along with their points this season.
+
+Solution :
+Liverpool                   99    
+Man. City                   81    
+Man United                  66
+Chelsea                     66
+Leicester City              62
+Tottenham                   59
+Wolves                      59
+Arsenal                     56
+Sheffield United            54
+Burnley                     54
+Southampton                 52
+Everton                     49
+Newcastle United            44
+Crystal Palace              43
+Brighton                    41
+West Ham                    39 
+Aston Villa                 35
+Bournemouth                 34
+Watford                     34
+Norwich City                21
+
+
+
+2.Create a file name "Groceries" which will contain Names and Types of Groceries.Another file named "Fruits and Vegetables" will be created.From the "Groceries" file the Groceries of which the type is Fruits and Vegetables will be greped and will be printed in the File "Fruits and Vegetables" using pipeline.
+
+3.Create a file named "pharmaceutical_store" which will contain all the medicine_names and their types(Capsul,Tablet,Syrup,paracetamol etc).Another file will be created named "Capsuls".From the "pharmaceutical_store" file the medicines of which the type is Capsul will be greped and will be printed in the file "Capsuls" using Pipeline.
+
+>> touch pharmaceuticals.txt
+>> cat > pharmaceuticals.txt
+Name         |               Type
+Docopa 400            Antibiotic
+Napa Extend           paracetamol
+Tushka                Shyrap
+Civit                 Vitamin
+Flexo                 Antibiotic
+Flobin                paracetamol
+Hexol                 Shyrap
+
+>> touch Paracetamols.txt
+>> cat pharmaceuticals.txt | grep paracetamol > Paracetamols.txt
+>> cat Paracetamols.txt
+
+
+
+
+
+
+
+
+
+
+

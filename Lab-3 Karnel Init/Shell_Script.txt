@@ -1,0 +1,94 @@
+pass - kazi1234
+kernel version 4.19.146
+1st task ->
+** sudo apt-get install gparted
+---Didnt us vmware workstation pro so had to create a copy
+---amra chacchi Vmware processor er 2ta core use kore kaj ta koruk
+*Setting up host environment
+*karnel create,compile,intall korar jonno host environment create kora lage.
+2nd task ->
+compiling and installing the karnel ->
+-> grub age thik kore nibo
+-> karnel er menu dekhte chai
+-> etc er bhitore shob config file thake
+ ** sudo gedit /etc/default/grub
+    sudo cause superuser er permit chara ei file access kora jabe na ar gedit hole windows er notepad er moto.
+##GRUB_TIMEOUT_STYLE=hidden dewa thakle grub dekhte pari na
+->ekhon etake boot er shomoy janate hobe boot er bhitore config file gula ei update payni ekhono
+
+**sudo update-grub
+->reboot
+5.4.0-42 generic version er kernel ta ache 5.4.0-26 ta nai
+
+-> ebar kaj host system ta ke ready kora
+ -> er age repository list update kore nite hobe
+    ** sudo apt-get update
+
+->  next we will choose a karnel that we wish to compile from the website kernel.org
+  **uname -r dile kon kernel use korchu dekha jay
+
+-> environment create er jonno pre-requisite gula install korte hobe
+  ** sudo apt-get install
+  ** sudo apt-get install build-essential(C,C++ er compiler gula install hobe) - no problem faced
+  -> binutils version 2.34 already exists
+  -> flex doesnt exist
+  ** sudo apt-get install flex(flex intall done)
+  -> bison doesnt exist
+  ** sudo apt-get install bison(done)
+  -> fdformat version 2.34 already existed.
+  -> kmod version 27 already existed
+  -> e2fsprogs version 1.45.5 already existed
+  -> jfsutils doesnt exist
+  ** sudo apt-get install jfsutils(done)
+  -> reiserfsprogs doesnt exist
+  ** sudo apt-get install reiserfsprogs
+  -> xfsprogs doesnt exist
+  ** sudo apt-get install xfsprogs(done)
+  -> squashfs-tools version 4.4 already existed
+  -> btrfs-progs didnt exist
+  ** sudo apt-get install btrfs-progs(done)
+  -> libncurses-dev didnt exist
+  **sudo apt-get install libncurses-dev(done)
+  -> libssl-dev didnt exist
+  **sudo apt-get install libssl-dev
+  -> libelf-dev didnt exist
+  ** sudo apt-get install libelf-dev
+  -> pcmciautils version 018 existed
+  -> quota-tools didnt exist
+  ** sudo apt-get install quota-tools(done)(problem)
+  -> ppp version 2.4.7 existed
+  -> isdn4k-utils  didnt exist
+  ** sudo apt-get install isdn4k-utils(unable to find)(problem)
+  -> nfs-utils didtn exist
+  ** sudo apt-get install nfs-common(unable to find)(problem)
+  -> procps version 3.3.16 already existed
+  -> oprofile didnt exist
+  ** sudo apt-get install oprofile
+  -> udev version 245.4-4ubuntu3.4 existed
+  -> grub didnt exist
+  ** sudo apt-get install grub(problem)  
+  -> mcelog 
+  ** sudo apt-get install mcelog(problem)
+  -> iptables version 1.8.4 already existed
+  -> openssl version 1.1.1 already existed
+     sudo apt-get install openssl & libcrypto
+  -> bc version 1.07.1 already existed
+  -> Sphinx
+  ** sudo apt-get install Sphinx(E: Unable to locate package Sphinx)
+  -> GTK2.0 (graphical jinish represent korar jonno lage)
+  ** sudo apt-get install gtk2.0
+  -> oprofile
+  -> Quota utilities version 4.05 was installed
+  ** sudo apt install quota
+---------------------------host environment ready-------------------------------------------
+karnel compilation >
+  ** make menuconfig
+koyta core use korbe bole dewar shomoy
+  ** make -j2
+  ** sudo make modules_install
+   final install
+  ** sudo make install
+  ** sudo update-grub
+     
+
+
